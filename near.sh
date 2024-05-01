@@ -6,7 +6,7 @@ OUTPUT_DIR="logs"
 
 UA=$(shuf -n 1 ua.txt)
 
-axelar_data=$(curl -A UA -x http://premium.proxywing.com:12321 --proxy-user d9hv1twu6q:rzld6kr3mb -s -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","id":"1","method":"status"}' "$RPC_URL")
+near_data=$(curl -A UA -x http://premium.proxywing.com:12321 --proxy-user d9hv1twu6q:rzld6kr3mb -s -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"block","id":"HappyCuanAirdrop","params":{"finality":"final"}}' "$RPC_URL")
 
 if [ $? -eq 0 ]; then
     if [ ! -d "$OUTPUT_DIR" ]; then
